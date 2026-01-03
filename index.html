@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:description"
+      content="Todas as Informações da Viagem de Salvador para o Consórcio Cuiabá 06/01/2026"
+    />
+    <title>VIAGEM SALVADOR - CONSÓRCIO CUIABÁ 06/01/2026</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #2a3870 0%, #1a2450 100%);
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        animation: slideUp 0.6s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, #2a3870, #3a4880);
+        color: #fff;
+        padding: 40px 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(190, 140, 63, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      .card-header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #be8c3f;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-header p {
+        font-size: 1.3em;
+        opacity: 0.95;
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-body {
+        padding: 40px 30px;
+      }
+
+      .info-item {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-left: 5px solid #be8c3f;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .info-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 20px rgba(190, 140, 63, 0.2);
+      }
+
+      .info-item-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .info-icon {
+        font-size: 2em;
+        margin-right: 15px;
+      }
+
+      .info-item h3 {
+        color: #2a3870;
+        font-size: 1.3em;
+        margin: 0;
+      }
+
+      .info-item p {
+        color: #555;
+        line-height: 1.8;
+        margin: 8px 0;
+        font-size: 1.05em;
+      }
+
+      .info-item strong {
+        color: #2a3870;
+      }
+
+      .highlight-date {
+        background: linear-gradient(135deg, #2a3870, #3a4880);
+        color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 25px rgba(42, 56, 112, 0.3);
+      }
+
+      .highlight-date .day {
+        font-size: 3.5em;
+        font-weight: bold;
+        color: #be8c3f;
+        line-height: 1;
+      }
+
+      .highlight-date .month-year {
+        font-size: 1.3em;
+        margin-top: 5px;
+        opacity: 0.9;
+      }
+
+      .highlight-date .weekday {
+        font-size: 1.1em;
+        margin-top: 8px;
+        opacity: 0.8;
+      }
+
+      .location-box {
+        background: linear-gradient(135deg, #be8c3f, #cea05f);
+        color: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        margin-top: 10px;
+        box-shadow: 0 5px 20px rgba(190, 140, 63, 0.3);
+      }
+
+      .location-box p {
+        color: #fff !important;
+        margin: 5px 0;
+      }
+
+      .location-box strong {
+        color: #fff;
+        font-size: 1.1em;
+      }
+
+      .alert-box {
+        background: linear-gradient(135deg, #be8c3f, #cea05f);
+        color: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 25px;
+        box-shadow: 0 8px 25px rgba(190, 140, 63, 0.4);
+      }
+
+      .alert-box h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .alert-box p {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .time-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .time-box {
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid #be8c3f;
+      }
+
+      .time-box .label {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .time-box .time {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #2a3870;
+      }
+
+      @media (max-width: 768px) {
+        .card-header h1 {
+          font-size: 1.8em;
+        }
+
+        .card-header p {
+          font-size: 1.1em;
+        }
+
+        .highlight-date .day {
+          font-size: 2.5em;
+        }
+
+        .time-section {
+          grid-template-columns: 1fr;
+        }
+
+        .info-item {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h1>✈️ INFORMAÇÕES DA VIAGEM</h1>
+          <p>Salvador → Consórcio Cuiabá</p>
+        </div>
+
+        <div class="card-body">
+          <!-- DATA -->
+          <div class="highlight-date">
+            <div class="day">06</div>
+            <div class="month-year">JANEIRO DE 2026</div>
+            <div class="weekday">Terça-feira</div>
+          </div>
+
+          <!-- HORÁRIOS -->
+          <div class="info-item">
+            <div class="info-item-header">
+              <div class="info-icon">⏰</div>
+              <h3>Horários</h3>
+            </div>
+
+            <div class="time-section">
+              <div class="time-box">
+                <div class="label">Chegada para Integração/Bagagem</div>
+                <div class="time">07:00</div>
+              </div>
+              <div class="time-box">
+                <div class="label">Partida do Ônibus</div>
+                <div class="time">08:00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOCAL DE EMBARQUE -->
+          <div class="info-item">
+            <div class="info-item-header">
+              <div class="info-icon">📍</div>
+              <h3>Local de Embarque</h3>
+            </div>
+
+            <div class="location-box">
+              <strong>Clínica SEMOL - Boca do Rio</strong>
+              <p>Próximo ao Colégio Imeja / Monte Soriano</p>
+              <p style="margin-top: 12px; font-size: 1.05em">
+                📫 R. Abelardo Andrade de Carvalho, 02<br />
+                Boca do Rio, Salvador - BA<br />
+                CEP: 41706-710
+              </p>
+            </div>
+          </div>
+
+          <!-- ALIMENTAÇÃO -->
+          <div class="info-item">
+            <div class="info-item-header">
+              <div class="info-icon">🍽️</div>
+              <h3>Alimentação</h3>
+            </div>
+            <p><strong>Totalmente por conta do Consórcio:</strong></p>
+            <p>✓ Lanche no embarque</p>
+            <p>✓ Alimentação completa durante toda a viagem</p>
+          </div>
+
+          <!-- ALERTA FINAL -->
+          <div class="alert-box">
+            <h3>⚠️ IMPORTANTE</h3>
+            <p>Chegue com antecedência para não perder o horário de partida!</p>
+            <p style="margin-top: 10px; font-weight: bold">
+              Boa viagem e sucesso! 🚀
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
